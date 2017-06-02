@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from apps.client.views import ClientViewSet
 from apps.userbot.views import UserbotViewSet
+from apps.task.views import TaskViewSet
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -21,6 +22,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'clients', ClientViewSet)
 router.register(r'usersbot', UserbotViewSet)
+router.register(r'tasks', TaskViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
