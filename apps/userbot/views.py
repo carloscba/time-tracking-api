@@ -1,5 +1,6 @@
 from models import Userbot
 from rest_framework import viewsets
+from rest_framework import permissions
 from serializers import UserbotSerializer
 
 class UserbotViewSet(viewsets.ModelViewSet):
@@ -8,3 +9,4 @@ class UserbotViewSet(viewsets.ModelViewSet):
     """
     queryset = Userbot.objects.all()
     serializer_class = UserbotSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)

@@ -1,5 +1,6 @@
 from models import Client
 from rest_framework import viewsets
+from rest_framework import permissions
 from serializers import ClientSerializer
 
 class ClientViewSet(viewsets.ModelViewSet):
@@ -8,3 +9,4 @@ class ClientViewSet(viewsets.ModelViewSet):
     """
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
