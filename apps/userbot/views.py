@@ -9,4 +9,4 @@ class UserbotViewSet(viewsets.ModelViewSet):
     """
     queryset = Userbot.objects.all()
     serializer_class = UserbotSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticated,)
